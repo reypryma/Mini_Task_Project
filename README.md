@@ -1,16 +1,12 @@
-# webmiss
+# Mini Task
 
-A new Flutter project.
+Flutter mini task to answer two question.
+[![](https://i.ibb.co/ZgB8ydC/2023-06-18-060447.png "Start Page")]
 
-## Getting Started
+## QUESTION 1
+"ApaBole" Program
 
-This project is a starting point for a Flutter application.
+[![](https://i.ibb.co/SKhcRnb/2023-06-18-060524.png "Fizz Buzz")]
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## QUESTION 2
+[![](https://i.ibb.co/dpMbCY0/2023-06-18-060536.png "Weather Forecast")]
