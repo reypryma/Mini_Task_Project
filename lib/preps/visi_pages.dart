@@ -1,9 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../helper/axis.dart';
 import '../helper/theme_data.dart';
+import '../media/asset_constant.dart';
 
 class VisiPages extends StatefulWidget {
   const VisiPages({Key? key}) : super(key: key);
@@ -15,6 +18,7 @@ class VisiPages extends StatefulWidget {
 class _VisiPagesState extends State<VisiPages> {
   TextEditingController inputController = TextEditingController();
   String generatedText = 'Please Input The Data';
+  List<String> animals = ['Magpie', 'Armadilo', 'Cickadee', 'Axolotl', 'Platypus'];
   FocusNode f1 = FocusNode();
   final formKey = GlobalKey<FormState>();
 
@@ -25,7 +29,6 @@ class _VisiPagesState extends State<VisiPages> {
 
   @override
   void setState(VoidCallback fn) {
-
     super.setState(fn);
   }
 
@@ -38,13 +41,31 @@ class _VisiPagesState extends State<VisiPages> {
       } else if(type == 1){
 
       } else{
-
+        generatedText = shuffle(animals);
+        setState(() { });
       }
       toast('Success');
     }
     setState(() { });
   }
 
+
+  String shuffle<T>(List<T> list){
+    int currentIndex = animals.length;
+    int randomIndex = 0;
+    Random random = Random();
+    T temp;
+
+    while(currentIndex > 0){
+      randomIndex = random.nextInt(currentIndex);
+      currentIndex--;
+
+      temp = list[currentIndex];
+      list[currentIndex] = list[randomIndex];
+      list[randomIndex] = temp;
+    }
+    return list.join(', ');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +109,7 @@ class _VisiPagesState extends State<VisiPages> {
                       onTap: (){
                         formValidation(0);
                       },
-                      child: const Text('Generate Segitiga'),
+                      child: const Text('Generate A'),
                     ),
                     16.width,
                     16.height,
@@ -98,7 +119,7 @@ class _VisiPagesState extends State<VisiPages> {
                       onTap: ()async{
                         formValidation(1);
                       },
-                      child: const Text('Generate Bilangan Ganjil'),
+                      child: const Text('Generate B'),
                     ),
                     16.width,
                     16.height,
@@ -108,7 +129,7 @@ class _VisiPagesState extends State<VisiPages> {
                       onTap: (){
                         formValidation(3);
                       },
-                      child: const Text('Generate Bilangan Prima'),
+                      child: const Text('Generate Random'),
                     ),
                   ],
                 ),
@@ -119,6 +140,7 @@ class _VisiPagesState extends State<VisiPages> {
                       style: boldTextStyle(color: black, size: 32)),
                 ),
                 Text(generatedText, style: secondaryTextStyle(),),
+                32.height,
               ],
             ),
           ),
