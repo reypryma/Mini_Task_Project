@@ -8,14 +8,6 @@ class AppConfig {
 }
 
 class ApiConstant {
-  //work
-  // https://api.openweathermap.org/data/2.5/weather?lat=-6.200000&lon=106.816666&appid=b2cf027630d03220c653aca77c0661b8
-  // https://api.openweathermap.org/data/2.5/forecast?lat=-6.200000&lon=106.816666&appid=b2cf027630d03220c653aca77c0661b8
-
-  //get current
-  // https://api.openweathermap.org/data/2.5/weather?lat=-6.200000&lon=106.816666&appid=b2cf027630d03220c653aca77c0661b8
-
-
   static fetchForesightWeather({required double lat, required double lon, int daily = 5}) {
     String url = '${AppConfig.domainForecast}lat=${lat}&lon=${lon}&appid=${AppConfig.apiKey}';
     print("fetch forecast of $url");

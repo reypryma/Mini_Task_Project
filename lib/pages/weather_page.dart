@@ -48,7 +48,7 @@ class _WeatherPageState extends State<WeatherPage> {
         ),
       ),
       body: !isLoading ? Container(
-        margin: EdgeInsets.all(32),
+        margin: const EdgeInsets.all(32),
         child: Text(response!),
       ) : loadingWidget(context),
     );
